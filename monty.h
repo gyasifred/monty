@@ -76,4 +76,7 @@ unsigned int c_stack(stack_s *stack);
 void pint(stack_t **stack, unsigned int err_loc);
 void pstr(stack_t **stack, unsigned int err_loc);
 void rotl(stack_t **stack, unsigned int err_loc);
+void check_frees_stack(void);
+void handle_err(int errno, char *opcode, unsigned int line, char *buff);
+void handle_err1(int errno, char *opcode, unsigned int line);
 #endif
