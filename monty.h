@@ -40,6 +40,10 @@ void pchar(stack_t **stack, unsigned int lin_num);
 void check_args_numbs(int argu);
 void check_access_file(char *fname);
 int check_push_params(char *params);
+<<<<<<< HEAD
 
 unsigned int c_stack(stack_s *stack);
+=======
+void pint(stack_t **stack, unsigned int err_loc);
+>>>>>>> 2a15f4fc3e3f7cc641d836da5f766e39d651ea91
 #endif
