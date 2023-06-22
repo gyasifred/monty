@@ -32,9 +32,12 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 void push(stack_t **stack, unsigned int data);
 void push_queue(stack_t **stack, unsigned int data);
 void pchar(stack_t **stack, unsigned int lin_num);
 
-
+void check_args_numbs(int argu);
+void check_access_file(char *fname);
+int check_push_params(char *params);
 #endif
