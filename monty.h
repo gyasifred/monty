@@ -40,4 +40,5 @@ void pchar(stack_t **stack, unsigned int lin_num);
 void check_args_numbs(int argu);
 void check_access_file(char *fname);
 int check_push_params(char *params);
+void pint(stack_t **stack, unsigned int err_loc);
 #endif
