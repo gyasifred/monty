@@ -74,4 +74,5 @@ void check_access_file(char *fname);
 int check_push_params(char *params);
 unsigned int c_stack(stack_s *stack);
 void pint(stack_t **stack, unsigned int err_loc);
+void pstr(stack_t **stack, unsigned int err_loc);
 #endif
