@@ -12,14 +12,14 @@ void add_t(stack_t **stack, unsigned int line_numb)
 	stack_t *temp = *stack;
 	unsigned int a = 0, b = 0, len = 0;
 
-	len = count_stack(*stack);
+	len = c_stack(*stack);
 
 	if (len < 2)
-		handle_err(ERR_ADD_USG, NULL, line_number, NULL);
+		handle_error(ERR_ADD_USG, NULL, line_numb, NULL);
 
-	a = temp->u;
-	b = temp->next->u;
-	temp->next->u = a + b;
+	a = temp->n;
+	b = temp->next->n;
+	temp->next->n = a + b;
 	*stack = temp->next;
 	free(temp);
 }
