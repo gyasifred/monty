@@ -86,4 +86,10 @@ int handle_exec(char *opcode, char *opparams, unsigned int line, int a);
 FILE *open_file(char *filename);
 void (*pick_func(char *s))(stack_t **, unsigned int);
 int main(int argu, char *arg[]);
+void add_t(stack_t **stack, unsigned int line_numb);
+void div(stack_t **stack, unsigned int line_numb);
+void mod_t(stack_t **stack, unsigned int line_numb);
+void mul_op(stack_t **stack, unsigned int line_numb);
+void nop_op(stack_t **stack, unsigned int line_numb);
+void pall_op(stack_t **stack, unsigned int line_numb);
 #endif
