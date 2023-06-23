@@ -1,13 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#include <ctype.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-
 /* Constants */
 #define SUCSS_OP		0
 #define VALID_PARM		0
@@ -34,6 +27,13 @@
 #define ERR_MOD_USG		210
 #define ERR_PCH_USG		211
 #define ERR_PCH_EMP		212
+
+#include <ctype.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include "monty.h"
 
 stack_t *head = NULL;
@@ -13,36 +14,36 @@ int main(int argc, char *argv[])
 {
 	FILE *file = NULL;
 	size_t line_length = 0;
-	unsigned int line_number = 1;
-	int read = 0, status_op = 0;
-	char *filename = NULL, *opcode = NULL, *opparams = NULL, *buff = NULL;
+	unsigned int line_num = 1;
+	int nch_read = 0, op_status = 0;
+	char *filename = NULL, *op_code = NULL, *op_param = NULL, *buff = NULL;
 
 	filename = argv[1];
 	check_args_numbs(argc);
 	file = open_file(filename);
 
-	while ((read = getline(&buff, &line_length, file)) != -1)
+	while ((nch_read= getline(&buff, &line_length, file)) != -1)
 	{
-		opcode = strtok(buff, "\t\n ");
-		if (opcode)
+		op_code = strtok(buff, "\t\n ");
+		if (op_code)
 		{
-			if (opcode[0] == '#')
+			if (op_code[0] == '#')
 			{
-				++line_number;
+				++line_num;
 				continue;
 			}
 
-			opparams = strtok(NULL, "\t\n ");
-			status_op = handle_execution(opcode, opparams, line_number, status_op);
+			op_param = strtok(NULL, "\t\n ");
+			op_status = handle_execution(op_code, op_param, line_num, op_status);
 
-			if (status_op >= 100 && status_op < 300)
+			if (op_status >= 100 && op_status < 300)
 			{
 				fclose(file);
-				handle_error(status_op, opcode, line_number, buff);
+				handle_error(op_status, op_code, line_num, buff);
 			}
 		}
 
-		++line_number;
+		++line_num;
 	}
 
 	frees_stack();
