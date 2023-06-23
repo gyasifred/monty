@@ -12,18 +12,18 @@ void div_op(stack_t **stack, unsigned int line_numb)
 	stack_t *temp = *stack;
 	unsigned int a = 0, b = 0, len = 0;
 
-	len = count_stack(*stack);
+	len = c_stack(*stack);
 
 	if (len < 2)
-		handle_error(ERR_DIV_USG, NULL, line_numb, NULL);
+		handle_err1(ERR_DIV_USG, NULL, line_numb, NULL);
 
-	a = temp->u;
+	a = temp->n;
 
 	if (a == 0)
-		handle_error(ERR_DIV_ZRO, NULL, line_numb, NULL);
+		handle_err1(ERR_DIV_ZRO, NULL, line_numb, NULL);
 
-	b = temp->next->u;
-	temp->next->u = b / a;
+	b = temp->next->n;
+	temp->next->n = b / a;
 	*stack = temp->next;
 	free(temp);
 }
