@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * div - Divides the second top element by the top element of the stack
+ * div_op - Divides the second top element by the top element of the stack
  * @stack: The head of the stack
  * @line_numb: The line on which the error occurred
  *
  * Return: Nothing
  */
-void div(stack_t **stack, unsigned int line_numb)
+void div_op(stack_t **stack, unsigned int line_numb)
 {
 	stack_t *temp = *stack;
 	unsigned int a = 0, b = 0, len = 0;
@@ -15,12 +15,12 @@ void div(stack_t **stack, unsigned int line_numb)
 	len = count_stack(*stack);
 
 	if (len < 2)
-		handle_err(ERR_DIV_USG, NULL, line_numb, NULL);
+		handle_error(ERR_DIV_USG, NULL, line_numb, NULL);
 
 	a = temp->u;
 
 	if (a == 0)
-		handle_err(ERR_DIV_ZRO, NULL, line_numb, NULL);
+		handle_error(ERR_DIV_ZRO, NULL, line_numb, NULL);
 
 	b = temp->next->u;
 	temp->next->u = b / a;
