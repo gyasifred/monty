@@ -10,10 +10,10 @@ void swap(stack_t **stack, unsigned int err_loc)
 {
 	unsigned int length = 0, temp = 0;
 
-	length = count_stack(*stack);
+	length = c_stack(*stack);
 
 	if (length < 2)
-		handle_error(ERR_SWAP_USG, NULL, line_number, NULL);
+		handle_error(ERR_SWAP_USG, NULL, err_loc, NULL);
 
 	if (*stack)
 	{

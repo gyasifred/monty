@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
-  * handle_err2 - Manages interpreter usage errors
+  * handle_uerror - Manages interpreter usage errors
   * @errno: The error code to manage
   * @line: The line on which the error occurred
   *
   * Return: Nothing
   */
-void handle_err2(int errno, unsigned int line)
+void handle_uerror(int errno, unsigned int line)
 {
 	switch (errno)
 	{
@@ -50,20 +50,19 @@ void handle_err2(int errno, unsigned int line)
 }
 
 /**
-  * handle_err3 - Manages interpreter usage errors
+  * handle_more_uerror - Manages interpreter usage errors
   * @errno: The error code to manage
   * @line: The line on which the error occurred
-  *
-  * Return: Nothing
+  * Return: void
   */
-void handle_err3(int errno, unsigned int line)
+void handle_more_uerror(int errno, unsigned int line)
 {
 	switch (errno)
 	{
 		case ERR_PCH_USG:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
 			break;
-		case ERR_PCH_USG:
+		case ERR_PCH_EMP:
 			fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
 			break;
 		default:

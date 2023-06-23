@@ -6,9 +6,9 @@
   *
   * Return: Number of elements in the stack
   */
-unsigned int c_stack(stack_s *stack)
+unsigned int c_stack(stack_t *stack)
 {
-	stack_s *current = stack;
+	stack_t *current = stack;
 	unsigned int len = 0;
 
 	while (current != NULL)

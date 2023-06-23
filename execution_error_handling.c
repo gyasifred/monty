@@ -9,7 +9,7 @@
   *
   * Return: 0 if the operation was executed correctly or errcode if is invalid
   */
-int handle_exec(char *opcode, char *opparams, unsigned int line, int a)
+int handle_execution(char *opcode, char *opparams, unsigned int line, int a)
 {
 	int opstatus = 0;
 	void (*optr)(stack_t **, unsigned int);
@@ -20,7 +20,7 @@ int handle_exec(char *opcode, char *opparams, unsigned int line, int a)
 		return (METH_QUEUE);
 
 	optr = pick_func(opcode);
-	if (oprt)
+	if (optr)
 	{
 		if (strcmp(opcode, "push") == 0)
 		{
@@ -31,7 +31,7 @@ int handle_exec(char *opcode, char *opparams, unsigned int line, int a)
 			if (a != 0 && a == METH_QUEUE)
 				optr = pick_func("push_queue");
 
-			optr(&head, atoi(opparam));
+			optr(&head, atoi(opparams));
 		}
 		else
 		{

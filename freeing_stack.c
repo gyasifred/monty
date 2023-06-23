@@ -5,7 +5,7 @@
   *
   * Return: Nothing
   */
-void check_frees_stack(void)
+void frees_stack(void)
 {
 	stack_t *temp = NULL;
 

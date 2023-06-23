@@ -33,7 +33,7 @@
 #define ERR_MUL_USG		209
 #define ERR_MOD_USG		210
 #define ERR_PCH_USG		211
-#define ERR_
+#define ERR_PCH_EMP		212
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -65,31 +65,36 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *head;
+
 void push(stack_t **stack, unsigned int data);
 void push_queue(stack_t **stack, unsigned int data);
 void pchar(stack_t **stack, unsigned int lin_num);
-
-void check_args_numbs(int argu);
+void check_args_numbs(int argc);
 void check_access_file(char *fname);
+int check_digit(char *str);
 int check_push_params(char *params);
 unsigned int c_stack(stack_t *stack);
 void pint(stack_t **stack, unsigned int err_loc);
 void pstr(stack_t **stack, unsigned int err_loc);
 void rotl(stack_t **stack, unsigned int err_loc);
-void check_frees_stack(void);
+void frees_stack(void);
 void handle_error(int errno, char *opcode, unsigned int line, char *buff);
-void handle_error(int errno, char *opcode, unsigned int line);
+void handle_cerror(int errno, char *opcode, unsigned int line);
+void handle_uerror(int errno, unsigned int line);
+void handle_more_uerror(int errno, unsigned int line);
 void rotr(stack_t **stack, unsigned int err_loc);
 void sub(stack_t **stack, unsigned int err_loc);
 void swap(stack_t **stack, unsigned int err_Loc);
-int handle_exec(char *opcode, char *opparams, unsigned int line, int a);
+int handle_execution(char *opcode, char *opparams, unsigned int line, int a);
 FILE *open_file(char *filename);
 void (*pick_func(char *s))(stack_t **, unsigned int);
-int main(int argu, char *arg[]);
-void add_op(stack_t **stack, unsigned int line_numb);
-void div_op(stack_t **stack, unsigned int line_numb);
-void mod_op(stack_t **stack, unsigned int line_numb);
-void mul_op(stack_t **stack, unsigned int line_numb);
-void nop_op(stack_t **stack, unsigned int line_numb);
-void pall_op(stack_t **stack, unsigned int line_numb);
+void add(stack_t **stack, unsigned int line_numb);
+void div(stack_t **stack, unsigned int line_numb);
+void mod(stack_t **stack, unsigned int line_numb);
+void mul(stack_t **stack, unsigned int line_numb);
+void nop(stack_t **stack, unsigned int line_numb);
+void pall(stack_t **stack, unsigned int line_numb);
+void pop(stack_t **stack, unsigned int err_loc);
+
 #endif

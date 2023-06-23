@@ -2,14 +2,14 @@
 
 /**
   * check_args_numbs - Checks num of arguments passed on to the interpreter
-  * @argu: Number of arguments
+  * @argc: Number of arguments
   *
   * Return: Nothing
   */
-void check_args_numbs(int argu)
+void check_args_numbs(int argc)
 {
-	if (argu != MIN_ARGS)
-		handle_error(ERR_ARG_USG, NULL, 0, NULL);
+	if (argc != MIN_ARGS)
+		handle_err(ERR_ARG_USG, NULL, 0, NULL);
 }
 
 /**

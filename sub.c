@@ -12,7 +12,7 @@ void sub(stack_t **stack, unsigned int err_loc)
 	stack_t *temp = *stack;
 	unsigned int i = 0, j = 0, len = 0;
 
-	len = count_stack(*stack);
+	len = c_stack(*stack);
 
 	if (len < 2)
 		handle_error(ERR_SUB_USG, NULL, err_loc, NULL);
