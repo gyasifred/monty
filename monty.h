@@ -81,4 +81,6 @@ void handle_err(int errno, char *opcode, unsigned int line, char *buff);
 void handle_err1(int errno, char *opcode, unsigned int line);
 void rotr(stack_t **stack, unsigned int err_loc);
 void sub(stack_t **stack, unsigned int err_loc);
+void swap(stack_t **stack, unsigned int err_Loc);
+
 #endif
