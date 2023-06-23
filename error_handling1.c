@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-  * handle_err - Handles the printing of interpreter errors
+  * handle_error - Handles the printing of interpreter errors
   * @errno: The error code to handle
   * @opcode: The operation code to manage
   * @line: The line on which the error occurred
@@ -9,7 +9,7 @@
   *
   * Return: Void
   */
-void handle_err(int errno, char *opcode, unsigned int line, char *buff)
+void handle_error(int errno, char *opcode, unsigned int line, char *buff)
 {
 	if (errno >= 100 && errno < 200)
 		handle_err1(errno, opcode, line);
@@ -20,7 +20,7 @@ void handle_err(int errno, char *opcode, unsigned int line, char *buff)
 	else
 		return;
 
-	free_stack();
+	c_stack();
 
 	if (buff)
 		free(buff);
@@ -29,14 +29,14 @@ void handle_err(int errno, char *opcode, unsigned int line, char *buff)
 }
 
 /**
-  * handle_err1 - Manages common interpreter errors
+  * handle_error - Manages common interpreter errors
   * @errno: The error code to manage
   * @opcode: The operation code to manage
   * @line: The line on which the error occurred
   *
   * Return: Nothing
   */
-void handle_err1(int errno, char *opcode, unsigned int line)
+void handle_error(int errno, char *opcode, unsigned int line)
 {
 	switch (errno)
 	{
