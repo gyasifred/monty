@@ -19,7 +19,7 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 		{ "add", add },
 		{ "nop", nop },
 		{ "sub", sub },
-		{ "div", div },
+		{ "div", divide},
 		{ "mul", mul },
 		{ "mod", mod },
 		{ "pchar", pchar },

@@ -10,7 +10,7 @@ FILE *open_file(char *filename)
 {
 	FILE *file = NULL;
 
-	check_access_rights(filename);
+	check_access_file(filename);
 
 	file = fopen(filename, "r");
 

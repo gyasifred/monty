@@ -90,7 +90,7 @@ int handle_execution(char *opcode, char *opparams, unsigned int line, int a);
 FILE *open_file(char *filename);
 void (*pick_func(char *s))(stack_t **, unsigned int);
 void add(stack_t **stack, unsigned int line_numb);
-void div(stack_t **stack, unsigned int line_numb);
+void divide(stack_t **stack, unsigned int line_numb);
 void mod(stack_t **stack, unsigned int line_numb);
 void mul(stack_t **stack, unsigned int line_numb);
 void nop(stack_t **stack, unsigned int line_numb);

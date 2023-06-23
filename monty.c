@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	char *filename = NULL, *opcode = NULL, *opparams = NULL, *buff = NULL;
 
 	filename = argv[1];
-	check_arg_numb(argc);
+	check_args_numbs(argc);
 	file = open_file(filename);
 
 	while ((read = getline(&buff, &line_length, file)) != -1)
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 			if (status_op >= 100 && status_op < 300)
 			{
-				f_close(file);
+				fclose(file);
 				handle_error(status_op, opcode, line_number, buff);
 			}
 		}
@@ -47,6 +47,6 @@ int main(int argc, char *argv[])
 
 	frees_stack();
 	free(buff);
-	f_close(file);
+	fclose(file);
 	return (0);
 }

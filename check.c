@@ -9,7 +9,7 @@
 void check_args_numbs(int argc)
 {
 	if (argc != MIN_ARGS)
-		handle_err(ERR_ARG_USG, NULL, 0, NULL);
+		handle_error(ERR_ARG_USG, NULL, 0, NULL);
 }
 
 /**
@@ -35,7 +35,7 @@ void check_access_file(char *fname)
   */
 int check_push_params(char *params)
 {
-	if (params == NULL || check_digits(params) == 0)
+	if (params == NULL || check_digit(params) == 0)
 		return (ERR_PUSH_USG);
 
 	return (VALID_PARM);
