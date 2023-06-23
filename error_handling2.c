@@ -63,7 +63,7 @@ void handle_err3(int errno, unsigned int line)
 		case ERR_PCH_USG:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
 			break;
-		case ERR_PCH_EMP:
+		case ERR_PCH_USG:
 			fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
 			break;
 		default:
