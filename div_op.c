@@ -15,12 +15,12 @@ void div_op(stack_t **stack, unsigned int line_numb)
 	len = c_stack(*stack);
 
 	if (len < 2)
-		handle_err1(ERR_DIV_USG, NULL, line_numb, NULL);
+		handle_error(ERR_DIV_USG, NULL, line_numb, NULL);
 
 	a = temp->n;
 
 	if (a == 0)
-		handle_err1(ERR_DIV_ZRO, NULL, line_numb, NULL);
+		handle_error(ERR_DIV_ZRO, NULL, line_numb, NULL);
 
 	b = temp->next->n;
 	temp->next->n = b / a;
