@@ -84,4 +84,5 @@ void sub(stack_t **stack, unsigned int err_loc);
 void swap(stack_t **stack, unsigned int err_Loc);
 int handle_exec(char *opcode, char *opparams, unsigned int line, int a);
 FILE *open_file(char *filename);
+void (*pick_func(char *s))(stack_t **, unsigned int);
 #endif
