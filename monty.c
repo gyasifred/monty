@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	check_args_numbs(argc);
 	file = open_file(filename);
 
-	while ((nch_read= getline(&buff, &line_length, file)) != -1)
+	while ((nch_read = getline(&buff, &line_length, file)) != -1)
 	{
 		op_code = strtok(buff, "\t\n ");
 		if (op_code)
@@ -51,3 +51,4 @@ int main(int argc, char *argv[])
 	fclose(file);
 	return (0);
 }
+
