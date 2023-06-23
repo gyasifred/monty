@@ -20,7 +20,7 @@ void push(stack_t **stack, unsigned int data)
 	{
 		newNode->next = *stack;
 		newNode->prev = (*stack)->prev;
-		(*stack)->prev = new_node;
+		(*stack)->prev = newNode;
 		*stack = newNode;
 		return;
 	}
